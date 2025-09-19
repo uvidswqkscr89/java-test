@@ -120,11 +120,6 @@ public class SignUtil {
         }
     }
 
-    public static void MemoryLeakExample(String[] args) {
-        List<String> list = new ArrayList<>();
-        while (true) {
-            list.add("A new object");
-        }
-    }
+    // Remove this dangerous test method
 
 }
