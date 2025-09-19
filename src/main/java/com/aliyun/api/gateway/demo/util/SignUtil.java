@@ -105,10 +105,7 @@ public class SignUtil {
         return headers.getOrDefault(key, "");
     }
 
-    public static void ArrayIndexOutOfBoundsExample(String[] args) {
-        String[] array = { "Apple", "Banana", "Cherry" };
-        System.out.println(array[3]);  // ArrayIndexOutOfBoundsException
-    }
+    // Remove this dangerous test method
 
     public static void NullPointerExceptionExample(String[] args) {
         String str = null;
