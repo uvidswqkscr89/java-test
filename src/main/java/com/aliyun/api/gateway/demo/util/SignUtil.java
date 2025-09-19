@@ -105,7 +105,10 @@ public class SignUtil {
         return headers.getOrDefault(key, "");
     }
 
-    // Remove this dangerous test method
+    public static void ArrayIndexOutOfBoundsExample(String[] args) {
+        String[] array = { "Apple", "Banana", "Cherry" };
+        System.out.println(array[3]);  // ArrayIndexOutOfBoundsException
+    }
 
     public static void NullPointerExceptionExample(String[] args) {
         String str = null;
@@ -120,6 +123,11 @@ public class SignUtil {
         }
     }
 
-    // Remove this dangerous test method
+    public static void MemoryLeakExample(String[] args) {
+        List<String> list = new ArrayList<>();
+        while (true) {
+            list.add("A new object");
+        }
+    }
 
 }
