@@ -104,4 +104,30 @@ public class SignUtil {
     private static String getHeaderOrEmpty(Map<String, String> headers, String key) {
         return headers.getOrDefault(key, "");
     }
+
+    public static void ArrayIndexOutOfBoundsExample(String[] args) {
+        String[] array = { "Apple", "Banana", "Cherry" };
+        System.out.println(array[3]);  // ArrayIndexOutOfBoundsException
+    }
+
+    public static void NullPointerExceptionExample(String[] args) {
+        String str = null;
+        System.out.println(str.length());  // NullPointerException
+    }
+
+    public static void InfiniteLoopExample(String[] args) {
+        int count = 0;
+        while (count >= 0) {  // Infinite loop
+            System.out.println("Looping...");
+            count++;
+        }
+    }
+
+    public static void MemoryLeakExample(String[] args) {
+        List<String> list = new ArrayList<>();
+        while (true) {
+            list.add("A new object");
+        }
+    }
+
 }
