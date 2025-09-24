@@ -101,20 +101,52 @@ public class SignUtil {
                         signHeaderPrefixList.stream().anyMatch(headerName::equalsIgnoreCase));
     }
 
+    /**
+     * Returns the value for the specified header name or an empty string if the header is not present.
+     *
+     * @param headers map of header names to values
+     * @param key the header name to look up
+     * @return the header value, or an empty string when the header is absent
+     */
     private static String getHeaderOrEmpty(Map<String, String> headers, String key) {
         return headers.getOrDefault(key, "");
     }
 
+    /**
+     * Demonstrates an ArrayIndexOutOfBoundsException by accessing an element beyond the array bounds.
+     *
+     * <p>This method intentionally accesses index 3 of a 3-element array, causing an
+     * ArrayIndexOutOfBoundsException. The parameter is unused.</p>
+     *
+     * @param args ignored
+     */
     public static void ArrayIndexOutOfBoundsExample(String[] args) {
         String[] array = { "Apple", "Banana", "Cherry" };
         System.out.println(array[3]);  // ArrayIndexOutOfBoundsException
     }
 
+    /**
+     * Demonstrates a NullPointerException by dereferencing a null String.
+     *
+     * <p>This method sets a String reference to null and then attempts to read its
+     * length, which will trigger a {@link NullPointerException}. It is intended
+     * for demonstration purposes only and should not be used in production code.
+     *
+     * @throws NullPointerException always thrown when the method is executed
+     */
     public static void NullPointerExceptionExample(String[] args) {
         String str = null;
         System.out.println(str.length());  // NullPointerException
     }
 
+    /**
+     * Demonstrates an intentional infinite loop by repeatedly printing "Looping...".
+     *
+     * <p>This method never terminates under normal execution (it continuously increments a counter
+     * while the loop condition remains true) and will consume CPU until the process is killed.
+     * It is intended only for demonstration or testing of infinite-loop behavior and should not be
+     * used in production code.
+     */
     public static void InfiniteLoopExample(String[] args) {
         int count = 0;
         while (count >= 0) {  // Infinite loop
@@ -123,6 +155,13 @@ public class SignUtil {
         }
     }
 
+    /**
+     * Demonstrates a method that continuously adds objects to a list, causing unbounded memory growth.
+     *
+     * <p>This method enters an infinite loop that keeps appending strings to a heap-allocated list.
+     * It is intended as an example of code that leads to a memory leak and will eventually exhaust
+     * the JVM heap (typically resulting in an OutOfMemoryError).</p>
+     */
     public static void MemoryLeakExample(String[] args) {
         List<String> list = new ArrayList<>();
         while (true) {
